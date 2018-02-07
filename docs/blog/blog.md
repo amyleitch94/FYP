@@ -11,7 +11,7 @@ OpenNFC sdk seems to be the only solution, but their website is down and I canno
 My aim for this week is to complete a base app with NFC functionality that can be tested using the emulator, and then tested on my own device with NFC tags I purchased.
 
 
-##Blog 07/02/2018
+## Blog 07/02/2018
 
 The following features have been implemented into the base app:
 -Detect when devices NFC is on/off
