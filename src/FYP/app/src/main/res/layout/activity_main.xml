@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.example.amyle.fyp.MainActivity">
+
+    <ToggleButton
+        android:id="@+id/tglReadWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="tglReadWriteOnClick"
+        android:textOff="Write"
+        android:textOn="Read" />
+
+    <ToggleButton
+        android:id="@+id/tglLockTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:textOff="Do Not Lock"
+        android:textOn="Lock Tag"
+        android:visibility="gone"
+        android:layout_below="@id/tglReadWrite"/>
+
+    <EditText
+        android:id="@+id/txtTagContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
