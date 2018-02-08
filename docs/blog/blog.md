@@ -1,72 +1,31 @@
-# Blog: MY-PROJECT-TITLE
+# Blog: NFC-ATTENDENCE TRACKER
 
-**MY-NAME**
+**Amy Leitch**
 
-## My First Blog Entry
+## Blog 06/02/2018
 
-This is my first blog entry.
+I have watched NFC tutorials online, and today I attempted to practice some of them as well as creating a base app to work with.
+This led to me realising that the Android Emulator in Android does not support NFC and I needed to research alternatives.
+OpenNFC sdk seems to be the only solution, but their website is down and I cannot find the correct download. I am currently attempting to use my own phone to test some basic NFC functionality. 
 
-The blog is written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-Markdown is a simple text-based mark-up language.
+My aim for this week is to complete a base app with NFC functionality that can be tested using the emulator, and then tested on my own device with NFC tags I purchased.
 
-## My Second Blog Entry
 
-This week, I learned how to include
-[images](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images)
-in my blog.
+## Blog 07/02/2018
 
-![cat](https://gitlab.computing.dcu.ie/sblott/2018-ca400-XXXX/raw/master/docs/blog/images/cat.jpg)
+The following features have been implemented into the base app:
+-Detect when devices NFC is on/off
+-Detect when an NFC tag is tapped to device
+-Ability to Write text to NFC tag - includes detecting when tag is unwritable
+-Aility to Read text to NFC tag - includes detecting when there is nothing to read
+-Ability to Lock the tag/make the tag Read Only (This needs to be worked on)
 
-Here are the instructions:
+I also discovered a way to possibly changing the code so when a tag is tapped with no app open, the app will open. If the app is already open when the tag is tapped, then it reads the tag. I am unsure if I want this functionality yet.
 
-- Add the image to your repo (probably using the `images` sub-directory here).
-  The cat example above is in `./images/cat.jpg`.
+While implementing these functions with the help of "NFC Tutorials" on Youtube, I learned about NdefMessage. 
 
-- Commit that and push it to your repo.
+"NDEF (NFC Data Exchange Format) is a light-weight binary format, used to encapsulate typed data. It is specified by the NFC Forum, for transmission and storage with NFC, however it is transport agnostic.
 
-- On Gitlab, navigate to your new image and click *Raw*.  You get the raw URL of your image.  Copy that URL.
+NDEF defines messages and records. An NDEF Record contains typed data, such as MIME-type media, a URI, or a custom application payload. An NDEF Message is a container for one or more NDEF Records.
 
-- Add your image to this document using the following format:
-
-    <pre>![alternative text](URL)</pre>
-
-See the example [here](https://gitlab.computing.dcu.ie/sblott/2018-ca400-XXXX/raw/master/docs/blog/blog.md).
-
-You can also mention other users (like me: @sblott).
-
-## Including Code
-
-Raw text:
-```
-Mary had a little lamb,
-it's fleece was white as snow.
-```
-
-Syntax highlighting is also possible; for example...
-
-Python:
-```python
-i = 0
-while i < len(s):
-   # So something.
-   i = i + 1
-```
-
-Java:
-```java
-for (i=0; i<s.length(); i+=1) {
-   // Do something.
-}
-```
-
-Coffeescript:
-```coffeescript
-i = 0
-while i < s.length
-   # So something.
-   i = i + 1
-```
-
-## Instructions
-
-Once you've understood this sample, replace it with your own blog.
+When an Android device receives an NDEF Message (for example by reading an NFC tag) it processes it through a dispatch mechanism to determine an activity to launch."
